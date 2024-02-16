@@ -1,15 +1,24 @@
 <script>
     import Question from "./lib/Question.svelte";
+    import Countdown from "./lib/Countdown.svelte";
     import question_texts_raw from "./assets/questions.txt?raw";
+
+    let isPlaying = true;
+    let rotation_interval, segment_interval;
+    let rotation_time_in_msec = 15000;
+    let num_countdown_segments = 20;
+    let activeSegment = num_countdown_segments + 1;
+    let segment_time_in_msec = rotation_time_in_msec / num_countdown_segments;
 
     let question_texts = question_texts_raw
         .split("\n")
         .sort((a, b) => 0.5 - Math.random()); // shuffle question order
 
-    let active_question = Math.floor(Math.random() * question_texts.length);
+    let active_question = 0;
 
     function nextQuestion() {
         active_question = (active_question + 1) % question_texts.length;
+        doCountdown();
     }
     function previousQuestion() {
         active_question =
@@ -18,16 +27,29 @@
                 : active_question - 1;
     }
 
-    let rotation;
-    let rotation_time_in_sec = 15;
-    function startRotation() {
-        rotation = setInterval(nextQuestion, rotation_time_in_sec * 1000);
-    }
-    function stopRotation() {
-        clearInterval(rotation);
+    function doCountdown() {
+        clearInterval(segment_interval);
+        activeSegment--;
+
+        if (activeSegment == -1) {
+            activeSegment = num_countdown_segments;
+        }
+
+        segment_interval = setInterval(
+            doCountdown,
+            rotation_time_in_msec / (num_countdown_segments + 1),
+        );
     }
 
-    let isPlaying = true;
+    function startRotation() {
+        rotation_interval = setInterval(nextQuestion, rotation_time_in_msec);
+        doCountdown();
+    }
+    function stopRotation() {
+        clearInterval(rotation_interval);
+        clearInterval(segment_interval);
+        activeSegment = num_countdown_segments + 1;
+    }
 
     $: isPlaying ? startRotation() : stopRotation();
 </script>
@@ -41,6 +63,14 @@
 {#each question_texts as question_text, idx}
     <Question {question_text} isActive={idx == active_question} {isPlaying} />
 {/each}
+
+{#if isPlaying}
+    <Countdown
+        {num_countdown_segments}
+        {activeSegment}
+        {segment_time_in_msec}
+    />
+{/if}
 
 <footer>
     <span
@@ -79,7 +109,9 @@
         width: 100vw;
         position: absolute;
         bottom: 0;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     footer span {
@@ -91,7 +123,7 @@
         cursor: pointer;
         opacity: 0.5;
         font-size: 2em;
-        transition: opacity .1s;
+        transition: opacity 0.1s;
     }
 
     footer .google-material-icons:hover {
