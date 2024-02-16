@@ -1,0 +1,8 @@
+What if CI were to automatically delete PRs that exceed a certain size or have been open beyond a certain length of time?
+If you discovered a market-winning feature today, how long until you start working on it?
+What’s the most vulnerable part of your software delivery platform? What are you doing about that?
+A critical security patch needs immediate release, but a major new feature is scheduled for the same day. How do you balance these competing priorities?
+You inherit a codebase from an unknown developer. What steps do you take to understand, maintain, and update it?
+The world is struck by a global internet outage. How would your software delivery process need to adapt?
+What’s the worst thing that could possibly happen? What’s the best thing?
+How could we reduce the amount of time we spend on prod support?
