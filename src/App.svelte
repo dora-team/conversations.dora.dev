@@ -43,8 +43,10 @@
 {/each}
 
 <footer>
-    <span class="google-material-icons" on:click={previousQuestion}
-        >chevron_left</span
+    <span
+        class="google-material-icons"
+        on:click={previousQuestion}
+        style:opacity={isPlaying ? 0 : ".5"}>chevron_left</span
     >
 
     <span
@@ -54,8 +56,10 @@
         }}
         >{#if isPlaying}stop_circle{:else}play_circle{/if}</span
     >
-    <span class="google-material-icons" on:click={nextQuestion}
-        >chevron_right</span
+    <span
+        class="google-material-icons"
+        on:click={nextQuestion}
+        style:opacity={isPlaying ? 0 : ".5"}>chevron_right</span
     >
 </footer>
 
@@ -87,6 +91,7 @@
         cursor: pointer;
         opacity: 0.5;
         font-size: 2em;
+        transition: opacity .1s;
     }
 
     footer .google-material-icons:hover {
