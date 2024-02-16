@@ -1,0 +1,19 @@
+steps:
+
+  - id: 'Build App'
+    name: 'node'
+    script: |
+      #! /usr/bin/env bash
+
+      # Build the Svelte app
+      echo "Using Node version $(node --version)"
+      npm install
+      npm run build
+      ls /workspace/dist
+
+  - id: 'Copy to Cloud Storage'
+    name: 'google/cloud-sdk:slim'
+    script: |
+      #! /usr/bin/env bash
+      gsutil cp -r /workspace/dist/* gs://conversations.dora.dev/
+      
