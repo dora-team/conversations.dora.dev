@@ -1,6 +1,7 @@
 <script>
     export let question_text = "<placeholder>";
     export let isActive = false;
+    export let isPlaying = true;
 
     let question_text_sentences = [];
 
@@ -15,7 +16,9 @@
 
 </script>
 
-<section class:isActive>
+<section class:isActive
+    style:transition={isPlaying ? "opacity 1s ease-out" : "opacity .1s linear"}
+    >
     {#each question_text_sentences as sentence}
         <p>{sentence}</p>
     {/each}

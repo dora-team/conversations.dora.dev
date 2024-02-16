@@ -39,7 +39,7 @@
 </header>
 
 {#each question_texts as question_text, idx}
-    <Question {question_text} isActive={idx == active_question} />
+    <Question {question_text} isActive={idx == active_question} {isPlaying} />
 {/each}
 
 <footer>
