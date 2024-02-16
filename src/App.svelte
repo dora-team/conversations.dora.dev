@@ -11,7 +11,7 @@
     function nextQuestion() {
         active_question = (active_question + 1) % question_texts.length;
     }
-    function lastQuestion() {
+    function previousQuestion() {
         active_question =
             active_question == 0
                 ? question_texts.length - 1
@@ -43,7 +43,7 @@
 {/each}
 
 <footer>
-    <span class="google-material-icons" on:click={lastQuestion}
+    <span class="google-material-icons" on:click={previousQuestion}
         >chevron_left</span
     >
 
