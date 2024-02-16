@@ -9,6 +9,7 @@
         .replaceAll("? ","?<LINEBREAK>")
 
     question_text_escaped.split("<LINEBREAK>").forEach((sentence) => {
+        sentence = sentence.replace(/ (?=[^ ]*$)/i, " "); // prevent orphans
         question_text_sentences.push(sentence)
     })
 
