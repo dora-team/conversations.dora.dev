@@ -2,7 +2,34 @@
     import Question from "./lib/Question.svelte";
     import question_texts_raw from "./assets/questions.txt?raw";
 
-    let question_texts = question_texts_raw.split("\n");
+    let question_texts = question_texts_raw
+        .split("\n")
+        .sort((a, b) => 0.5 - Math.random()); // shuffle question order
+
+    let active_question = Math.floor(Math.random() * question_texts.length);
+
+    function nextQuestion() {
+        active_question = (active_question + 1) % question_texts.length;
+    }
+    function lastQuestion() {
+        active_question =
+            active_question == 0
+                ? question_texts.length - 1
+                : active_question - 1;
+    }
+
+    let rotation;
+    let rotation_time_in_sec = 15;
+    function startRotation() {
+        rotation = setInterval(nextQuestion, rotation_time_in_sec * 1000);
+    }
+    function stopRotation() {
+        clearInterval(rotation);
+    }
+
+    let isPlaying = true;
+
+    $: isPlaying ? startRotation() : stopRotation();
 </script>
 
 <header>
@@ -11,13 +38,26 @@
     >
 </header>
 
-<Question
-    question_text={question_texts[
-        Math.floor(Math.random() * question_texts.length)
-    ]}
-/>
+{#each question_texts as question_text, idx}
+    <Question {question_text} isActive={idx == active_question} />
+{/each}
 
-<footer>(TODO)</footer>
+<footer>
+    <span class="google-material-icons" on:click={lastQuestion}
+        >chevron_left</span
+    >
+
+    <span
+        class="google-material-icons"
+        on:click={() => {
+            isPlaying = !isPlaying;
+        }}
+        >{#if isPlaying}stop_circle{:else}play_circle{/if}</span
+    >
+    <span class="google-material-icons" on:click={nextQuestion}
+        >chevron_right</span
+    >
+</footer>
 
 <style>
     header {
@@ -32,6 +72,24 @@
 
     footer {
         height: 10vh;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
         text-align: center;
+    }
+
+    footer span {
+        display: inline-block;
+        padding: 0 1em;
+    }
+
+    footer .google-material-icons {
+        cursor: pointer;
+        opacity: 0.5;
+        font-size: 2em;
+    }
+
+    footer .google-material-icons:hover {
+        opacity: 0.85;
     }
 </style>
