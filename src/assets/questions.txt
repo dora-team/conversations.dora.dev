@@ -6,3 +6,16 @@ You inherit a codebase from an unknown developer. What steps do you take to unde
 The world is struck by a global internet outage. How would your software delivery process need to adapt?
 What’s the worst thing that could possibly happen? What’s the best thing?
 How could we reduce the amount of time we spend on prod support?
+How long would it take your team to update a single word in your application’s user interface? How many teams would be involved?
+What would happen if you ran your test suite 10 times in a row for every build?
+What would happen if you turned off every alert in your monitoring system?
+What are some benefits your team would realize if your build times were cut in half? If they doubled?
+How do you know that the stories in the backlog should be carried forward to the next planning session?
+Think about the team who introduces the most friction to your daily work. What incentives might be driving their behavior?
+How would your work habits change if you moved to an area that is 5 time zones away from where you currently work?
+How are decisions made? Is the process top-down, or is there input from all levels?
+Describe the typical workday of a developer (or your desired role). What's the balance between meetings, focused work, and breaks?
+How does the organization approach code quality (code reviews, unit testing, automated testing strategies)?
+How would you characterize your documentation practices?
+What processes are in place for handling production incidents?
+How does the organization measure the success of technical initiatives?
