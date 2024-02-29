@@ -38,7 +38,7 @@
         overflow:hidden;
     }
 
-    @media screen and (min-width:720px) {
+    @media screen and (min-width:720px) and (min-height:600px) {
     question {
         font-size:5rem;
     }
