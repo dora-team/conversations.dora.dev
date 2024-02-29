@@ -1,0 +1,20 @@
+@import url(//fonts.googleapis.com/css2?family=Google+Sans);
+@import url(//fonts.googleapis.com/css?family=Google+Material+Icons&amp;lang=en);
+
+:root {
+  font-family: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
+  line-height: 1.25;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+
+  --dora-blue: #005d8d;
+  --dora-dark-blue: #003a59;
+
+  background-color: var(--dora-blue);
+  color:white;
+}
