@@ -47,7 +47,7 @@
     p_wrapper {       
         width:100vw;
         flex-direction: column; 
-        padding: 0 5vw 10vw 5vw;
+        padding: 0 5vw 5vw 5vw;
     }
 
     p {
