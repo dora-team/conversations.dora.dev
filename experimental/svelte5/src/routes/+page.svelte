@@ -1,10 +1,10 @@
 <script>
-    import '../app.css';
+    import "../app.css";
 
     import { browser } from "$app/environment";
     import { onDestroy } from "svelte";
 
-    import dora_logo from '$lib/img/icon.svg'
+    import dora_logo from "$lib/img/icon.svg";
     import questions_raw from "../assets/questions.txt?raw";
     import Question from "../lib/Question.svelte";
 
@@ -16,7 +16,7 @@
     let active_questions = $state([questions[0]]);
 
     let timer_width_in_vw = $state(100);
-    let timer_duration_in_msec = 3000;
+    let timer_duration_in_msec = 15000;
     let timer_start = browser ? window.performance.now() : 0;
     let timer_now = browser ? window.performance.now() : 0;
     let timer_elapsed = 0;
@@ -63,6 +63,11 @@
         isPlaying = false;
     }
 
+    function advanceAndReStartTimer() {
+        next();
+        reStartTimer();
+    }
+
     // on load, start timer
     reStartTimer();
 </script>
@@ -88,13 +93,14 @@
         class="google-material-icons"
         on:click={last}
         disabled={current_question == 0}
-        style:opacity={current_question == 0 || isPlaying ? 0 : ".5"}>chevron_left</span
+        style:opacity={current_question == 0 || isPlaying ? 0 : ".5"}
+        >chevron_left</span
     >
 
     <span
         class="google-material-icons"
         on:click={() => {
-            isPlaying ? stopTimer() : reStartTimer()
+            isPlaying ? stopTimer() : advanceAndReStartTimer();
         }}
         >{#if isPlaying}stop_circle{:else}play_circle{/if}</span
     >
@@ -110,17 +116,17 @@
         position: absolute;
         top: 0;
         height: 10vh;
-        width:100vw;
+        width: 100vw;
         text-align: center;
     }
 
     header img {
-        width: 50px;
-        padding: 1vw;
+        height: 6vh;
+        margin-top: 2vh;
     }
     questions {
         position: absolute;
-        top: 10vw;
+        top: 10vh;
         height: 80vh;
     }
 
@@ -144,12 +150,12 @@
         opacity: 0.5;
         font-size: 2em;
         transition: opacity 0.1s;
+        user-select: none;
     }
 
     footer .google-material-icons:hover {
         opacity: 0.85;
     }
-
 
     countdown {
         display: block;
@@ -159,6 +165,6 @@
         height: 2px;
         width: 100vw;
         background-color: white;
-        opacity: .5;
+        opacity: 0.5;
     }
 </style>
