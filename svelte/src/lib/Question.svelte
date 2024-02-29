@@ -1,49 +1,65 @@
 <script>
-    export let question_text = "<placeholder>";
-    export let isActive = false;
-    export let isPlaying = true;
+    import { fly } from "svelte/transition";
+    let { question_text = "" } = $props();
 
     let question_text_sentences = [];
 
     let question_text_escaped = question_text
-        .replaceAll(". ",".<LINEBREAK>")
-        .replaceAll("? ","?<LINEBREAK>")
+        .replaceAll(". ", ".<LINEBREAK>")
+        .replaceAll("? ", "?<LINEBREAK>");
 
     question_text_escaped.split("<LINEBREAK>").forEach((sentence) => {
-        sentence = sentence.replace(/ (?=[^ ]*$)/i, " "); // prevent orphans
-        question_text_sentences.push(sentence)
-    })
-
+        question_text_sentences.push(sentence);
+    });
 </script>
 
-<section class:isActive
-    style:transition={isPlaying ? "opacity 1s ease-out" : "opacity .1s linear"}
-    >
+<question
+    in:fly={{ x: "100vw", duration: 500 }}
+    out:fly={{ x: "100vw", duration: 500 }}
+>
+    <p_wrapper>
     {#each question_text_sentences as sentence}
         <p>{sentence}</p>
     {/each}
-</section>
+</p_wrapper>
+</question>
 
 <style>
-    section {
-        box-sizing: border-box;
+    question {
         width: 100vw;
-        height: 80vh;
+        height:100%;
+        background-color: var(--dora-blue);
+        left: 0px;
+        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        overflow:hidden;
+    }
+
+    @media screen and (min-width:720px) {
+    question {
+        font-size:5rem;
+    }
+}
+
+    p_wrapper {       
+        width:100vw;
+        flex-direction: column; 
+        padding: 0 5vw 10vw 5vw;
+    }
+
+    p {
         text-align: center;
-        padding: 1vw 5vw;
-        font-size: 5em;
-        position:absolute;
-        top:10vh;
-        opacity:0;
-        transition: opacity 1s ease-out;
+        text-shadow: var(--dora-dark-blue) 2px 2px;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+        transition: opacity .2s ease-out;
     }
 
-    section.isActive {
-        opacity:1;
-    }
-
-    section p {
-        margin:2vw 0;
-        text-shadow: var(--dora-dark-blue) 3px 3px;
+    question:not(:last-child)  p {
+        /* as a question is replaced, fade it out */
+        opacity:0; 
     }
 </style>
