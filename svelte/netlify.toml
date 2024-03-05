@@ -1,4 +1,4 @@
 [build]
   base = "svelte"
   command = "npm run build"
-  publish = "svelte/build"
+  publish = "build"
