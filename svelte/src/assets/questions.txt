@@ -5,7 +5,7 @@ A critical security patch needs immediate release, but a major new feature is sc
 You inherit a codebase from an unknown developer. What steps do you take to understand, maintain, and update it?
 The world is struck by a global internet outage. How would your software delivery process need to adapt?
 What’s the worst thing that could possibly happen? What’s the best thing?
-How could we reduce the amount of time we spend on prod support?
+How could you reduce the amount of time you spend on prod support?
 How long would it take your team to update a single word in your application’s user interface? How many teams would be involved?
 What would happen if you ran your test suite 10 times in a row for every build?
 What would happen if you turned off every alert in your monitoring system?
@@ -18,4 +18,6 @@ Describe the typical workday of a developer (or your desired role). What's the b
 How does the organization approach code quality (code reviews, unit testing, automated testing strategies)?
 How would you characterize your documentation practices?
 What processes are in place for handling production incidents?
-How does the organization measure the success of technical initiatives?
+How does your organization measure the success of technical initiatives?
+What does your product do, that no other product does?
+What would happen if you shut down right now?
