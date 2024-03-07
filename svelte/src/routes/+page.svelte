@@ -7,6 +7,7 @@
     import dora_logo from "$lib/img/icon.svg";
     import questions_raw from "../assets/questions.txt?raw";
     import Question from "../lib/Question.svelte";
+    import WhatsThis from "../lib/WhatsThis.svelte";
 
     let questions = questions_raw
         .split("\n")
@@ -76,6 +77,7 @@
     <a href="https://dora.dev" target="_blank"
         ><img src={dora_logo} alt="DORA" /></a
     >
+    <WhatsThis />
 </header>
 
 <questions>
