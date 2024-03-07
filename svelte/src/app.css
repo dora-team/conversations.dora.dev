@@ -1,5 +1,5 @@
 @import url(//fonts.googleapis.com/css2?family=Google+Sans);
-@import url(//fonts.googleapis.com/css?family=Google+Material+Icons&amp;lang=en);
+@import url(//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
 
 :root {
   font-family: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
@@ -17,4 +17,16 @@
 
   background-color: var(--dora-blue);
   color:white;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+    opacity: 0.5;
+    font-size: 2em;
+    transition: opacity 0.1s;
+    user-select: none;
+}
+
+.material-symbols-outlined:hover {
+    opacity: 0.85;
 }

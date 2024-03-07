@@ -7,6 +7,7 @@
     import dora_logo from "$lib/img/icon.svg";
     import questions_raw from "../assets/questions.txt?raw";
     import Question from "../lib/Question.svelte";
+    import WhatsThis from "../lib/WhatsThis.svelte";
 
     let questions = questions_raw
         .split("\n")
@@ -72,10 +73,13 @@
     reStartTimer();
 </script>
 
+<main>
+
 <header>
     <a href="https://dora.dev" target="_blank"
         ><img src={dora_logo} alt="DORA" /></a
     >
+    <WhatsThis />
 </header>
 
 <questions>
@@ -90,7 +94,7 @@
 
 <footer>
     <span
-        class="google-material-icons"
+        class="material-symbols-outlined"
         on:click={last}
         disabled={current_question == 0}
         style:opacity={current_question == 0 || isPlaying ? 0 : ".5"}
@@ -98,18 +102,19 @@
     >
 
     <span
-        class="google-material-icons"
+        class="material-symbols-outlined"
         on:click={() => {
             isPlaying ? stopTimer() : advanceAndReStartTimer();
         }}
         >{#if isPlaying}stop_circle{:else}play_circle{/if}</span
     >
     <span
-        class="google-material-icons"
+        class="material-symbols-outlined"
         on:click={next}
         style:opacity={isPlaying ? 0 : ".5"}>chevron_right</span
     >
 </footer>
+</main>
 
 <style>
     header {
@@ -143,18 +148,6 @@
     footer span {
         display: inline-block;
         padding: 0 1em;
-    }
-
-    footer .google-material-icons {
-        cursor: pointer;
-        opacity: 0.5;
-        font-size: 2em;
-        transition: opacity 0.1s;
-        user-select: none;
-    }
-
-    footer .google-material-icons:hover {
-        opacity: 0.85;
     }
 
     countdown {

@@ -1,0 +1,2 @@
+# Redirects from what the browser requests to what we serve
+/submit https://docs.google.com/forms/d/e/1FAIpQLScAlCWWiCV3mlzAfHYLQxW1CjSaHoNFkXSCsTYFOcrhFx2aSQ/viewform 301
