@@ -40,7 +40,6 @@
             where it takes you.
         </p>
         <p>
-            <!-- the url `/submit` will redirect [via Netlify] to the Google form where people can submit questions -->
             <a href="/submit" target="_blank" class="submit">Add a question</a>
         </p>
         <p class="resources">
