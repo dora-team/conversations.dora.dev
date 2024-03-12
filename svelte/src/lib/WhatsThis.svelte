@@ -15,7 +15,7 @@
     <p>
         <a href="/submit" target="_blank" class="submit">Suggest a question</a>
         <br>
-        <small>or, [open a PR](https://github.com/dora-team/conversations.dora.dev/edit/main/svelte/src/assets/questions.txt)</small>
+        <small>or, <a href="https://github.com/dora-team/conversations.dora.dev/edit/main/svelte/src/assets/questions.txt">open a PR</a></small>
     </p>
     <p class="resources">
         Find more resources at <a href="https://dora.dev" target="_blank"
@@ -104,5 +104,9 @@
         border: 1px solid var(--dora-blue);
         display: inline-block;
         padding: 0.25em;
+    }
+
+    small {
+        font-size:.75rem;
     }
 </style>
