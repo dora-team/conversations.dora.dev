@@ -13,7 +13,9 @@
         it takes you.
     </p>
     <p>
-        <a href="/submit" target="_blank" class="submit">Add a question</a>
+        <a href="/submit" target="_blank" class="submit">Suggest a question</a>
+        <br>
+        <small>or, [open a PR](https://github.com/dora-team/conversations.dora.dev/edit/main/svelte/src/assets/questions.txt)</small>
     </p>
     <p class="resources">
         Find more resources at <a href="https://dora.dev" target="_blank"
