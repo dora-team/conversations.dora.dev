@@ -33,3 +33,6 @@ How does your software delivery process change when you’re under pressure to d
 Who decides what development tools your organization uses? If you wanted to use a new tool, what would you need to do?
 What’s your “error budget” for security breaches…is it zero? Does that mean any kind of breach would be organization-ending?
 How much reliability is enough? How much is too much?
+Oops! You just shipped a user-facing bug! What do you do *right now*? Do you have the access you need? How long will it take?
+How fast does your product really have to be? What if it were 0.5 seconds slower? Would anyone care?
+What would happen if you doubled your customers next week? How about in the next hour? 
