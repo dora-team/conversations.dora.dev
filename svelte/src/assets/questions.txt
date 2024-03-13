@@ -29,3 +29,7 @@ Should code review be a blocking requirement before merging? Always, never, some
 How would you know if your nightly tests haven’t been running?
 Who’s a person in your organization that can circumvent release schedules to push emergency fixes?
 What’s stopping you?
+How does your software delivery process change when you’re under pressure to deliver a feature? What about a hotfix?
+Who decides what development tools your organization uses? If you wanted to use a new tool, what would you need to do?
+What’s your “error budget” for security breaches…is it zero? Does that mean any kind of breach would be organization-ending?
+How much reliability is enough? How much is too much?
