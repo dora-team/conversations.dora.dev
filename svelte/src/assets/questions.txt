@@ -21,3 +21,11 @@ What processes are in place for handling production incidents?
 How does your organization measure the success of technical initiatives?
 What does your product do, that no other product does?
 What would happen if you shut down right now?
+Do you use beta or early-access technology (tools, libraries, services)? Under what conditions?
+Shift left? Shift down?
+How can you and your team effectively delineate your work from others’?
+What sociological or philosophical frameworks can we leverage to improve well-being in technical organizations?
+Should code review be a blocking requirement before merging? Always, never, sometimes?
+How would you know if your nightly tests haven't been running?
+Who's a person in your organization that can circumvent release schedules to push emergency fixes?
+What's stopping you?
