@@ -30,3 +30,4 @@ How would you know if your nightly tests haven’t been running?
 Who’s a person in your organization that can circumvent release schedules to push emergency fixes?
 What’s stopping you?
 How does your software delivery process change when you’re under pressure to deliver a feature? What about a hotfix?
+Who decides what development tools your organization uses? If you wanted to use a new tool, what would you need to do?
