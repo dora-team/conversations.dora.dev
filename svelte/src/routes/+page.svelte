@@ -11,6 +11,7 @@
 
     let questions = questions_raw
         .split("\n")
+        .filter((e) => e) // filter out any blank questions (blank lines in questions.txt)
         .sort((a, b) => 0.5 - Math.random()); // shuffle question order
 
     let current_question = $state(0);
@@ -74,46 +75,45 @@
 </script>
 
 <main>
+    <header>
+        <a href="https://dora.dev" target="_blank"
+            ><img src={dora_logo} alt="DORA" /></a
+        >
+        <WhatsThis />
+    </header>
 
-<header>
-    <a href="https://dora.dev" target="_blank"
-        ><img src={dora_logo} alt="DORA" /></a
-    >
-    <WhatsThis />
-</header>
+    <questions>
+        {#each active_questions as question_text}
+            <Question {question_text} />
+        {/each}
+    </questions>
 
-<questions>
-    {#each active_questions as question_text}
-        <Question {question_text} />
-    {/each}
-</questions>
+    {#if isPlaying}
+        <countdown style="width:{timer_width_in_vw}vw"> </countdown>
+    {/if}
 
-{#if isPlaying}
-    <countdown style="width:{timer_width_in_vw}vw"> </countdown>
-{/if}
+    <footer>
+        <span
+            class="material-symbols-outlined"
+            on:click={last}
+            disabled={current_question == 0}
+            style:opacity={current_question == 0 || isPlaying ? 0 : ".5"}
+            >chevron_left</span
+        >
 
-<footer>
-    <span
-        class="material-symbols-outlined"
-        on:click={last}
-        disabled={current_question == 0}
-        style:opacity={current_question == 0 || isPlaying ? 0 : ".5"}
-        >chevron_left</span
-    >
-
-    <span
-        class="material-symbols-outlined"
-        on:click={() => {
-            isPlaying ? stopTimer() : advanceAndReStartTimer();
-        }}
-        >{#if isPlaying}stop_circle{:else}play_circle{/if}</span
-    >
-    <span
-        class="material-symbols-outlined"
-        on:click={next}
-        style:opacity={isPlaying ? 0 : ".5"}>chevron_right</span
-    >
-</footer>
+        <span
+            class="material-symbols-outlined"
+            on:click={() => {
+                isPlaying ? stopTimer() : advanceAndReStartTimer();
+            }}
+            >{#if isPlaying}stop_circle{:else}play_circle{/if}</span
+        >
+        <span
+            class="material-symbols-outlined"
+            on:click={next}
+            style:opacity={isPlaying ? 0 : ".5"}>chevron_right</span
+        >
+    </footer>
 </main>
 
 <style>
