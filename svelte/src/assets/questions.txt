@@ -14,10 +14,18 @@ How do you know that the stories in the backlog should be carried forward to the
 Think about the team who introduces the most friction to your daily work. What incentives might be driving their behavior?
 How would your work habits change if you moved to an area that is 5 time zones away from where you currently work?
 How are decisions made? Is the process top-down, or is there input from all levels?
-Describe the typical workday of a developer (or your desired role). What's the balance between meetings, focused work, and breaks?
+Describe the typical workday of a developer (or your desired role). What’s the balance between meetings, focused work, and breaks?
 How does the organization approach code quality (code reviews, unit testing, automated testing strategies)?
 How would you characterize your documentation practices?
 What processes are in place for handling production incidents?
 How does your organization measure the success of technical initiatives?
 What does your product do, that no other product does?
 What would happen if you shut down right now?
+Do you use beta or early-access technology (tools, libraries, services)? Under what conditions?
+Shift left? Shift down?
+How can you and your team effectively delineate your work from others’?
+What sociological or philosophical frameworks can we leverage to improve well-being in technical organizations?
+Should code review be a blocking requirement before merging? Always, never, sometimes?
+How would you know if your nightly tests haven’t been running?
+Who’s a person in your organization that can circumvent release schedules to push emergency fixes?
+What’s stopping you?
