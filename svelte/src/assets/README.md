@@ -11,7 +11,7 @@ In the spirit of reflection and collaborative experimentation, [conversations.do
 ## How to contribute
 This folder contains a file named [questions.txt](https://github.com/dora-team/conversations.dora.dev/blob/main/svelte/src/assets/questions.txt). To suggest a question, open a pull request containing changes to that file. 
 
-_By submitting this form, you warrant that you have all necessary rights to submit the content, and you consent without reservation to Google's non-exclusive use of the content without compensation or attribution now or in the future._
+_By opening a pull request in this repository, you warrant that you have all necessary rights to submit the content, and you consent without reservation to Google's non-exclusive use of the content without compensation or attribution now or in the future._
 
 Things to know:
 * We may not be able to accept all submissions, but we do appreciate all of them!
