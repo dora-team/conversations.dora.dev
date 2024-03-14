@@ -35,4 +35,6 @@ What’s your “error budget” for security breaches…is it zero? Does that m
 How much reliability is enough? How much is too much?
 Oops! You just shipped a user-facing bug! What do you do *right now*? Do you have the access you need? How long will it take?
 How fast does your product really have to be? What if it were 0.5 seconds slower? Would anyone care?
-What would happen if you doubled your customers next week? How about in the next hour? 
+What would happen if you doubled your customers next week? How about in the next hour?
+What does on-call page volume look like? What is the signal-to-noise ratio? How could it improve?
+What would happen if you had a production outage but the most knowledgeable person about that system was on vacation?
