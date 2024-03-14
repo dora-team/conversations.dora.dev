@@ -38,3 +38,13 @@ How fast does your product really have to be? What if it were 0.5 seconds slower
 What would happen if you doubled your customers next week? How about in the next hour?
 What does on-call page volume look like? What is the signal-to-noise ratio? How could it improve?
 What would happen if you had a production outage but the most knowledgeable person about that system was on vacation?
+What would change if your team got bigger? What would change if your team got smaller?
+Is technical debt always a bad thing? How do you decide?
+What if your task tracker were to automatically delete backlog tickets open beyond a certain length of time?
+How would users be impacted if you performed a production deploy in the middle of the day?
+How is AI impacting your daily work?
+How would skipping the change approval board effect your application's stability?
+What makes development in your industry different from development in other industries? Why do you think that difference exists?
+What's the first thing you do when a test fails?  What about when the same test has been failing for days?
+Which part of your application annoys or frustrates your users the most?
+What would you work on if you were guaranteed two days of uninterrupted focus?
