@@ -6,7 +6,7 @@ In the spirit of reflection and collaborative experimentation, [conversations.do
 * How do you know if a feature is valuable to your users?
 * Who is most likely to slow down or block a release? What's their motivation?
 
-**What ideas do you have?** Get creative—the only requirement is that your question is open-ended, to provoke a conversation.
+**What ideas do you have?** Get creative! The only requirement is that your question is open-ended, to provoke a conversation.
 
 ## How to contribute
 This folder contains a file named [questions.txt](https://github.com/dora-team/conversations.dora.dev/blob/main/svelte/src/assets/questions.txt). To suggest a question, open a pull request containing changes to that file. 
