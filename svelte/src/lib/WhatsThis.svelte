@@ -1,3 +1,17 @@
+<script>
+    import { onMount } from "svelte";
+    onMount(() => {
+        if (typeof window !== "undefined") {
+
+            // if queryparam `?whatsthis` is specified, open the "what's this" popover on page load
+            const searchParams = new URLSearchParams(window.location.search);
+            if(searchParams.has("whatsthis") && HTMLElement.prototype.hasOwnProperty("popover")) {
+                document.querySelector('#whatisthispopover').showPopover();
+            }
+        }
+    });
+</script>
+
 <div class="whatsthis">
     <button class="material-symbols-outlined" popovertarget="whatisthispopover"
         >help</button
@@ -14,8 +28,13 @@
     </p>
     <p>
         <a href="/submit" target="_blank" class="submit">Suggest a question</a>
-        <br>
-        <small>or, <a href="https://github.com/dora-team/conversations.dora.dev/tree/main/svelte/src/assets" target="_blank">open a PR</a></small>
+        <br />
+        <small
+            >or, <a
+                href="https://github.com/dora-team/conversations.dora.dev/tree/main/svelte/src/assets"
+                target="_blank">open a PR</a
+            ></small
+        >
     </p>
     <p class="resources">
         Find more resources at <a href="https://dora.dev" target="_blank"
@@ -39,9 +58,9 @@
 
     .whatsthis button {
         background: transparent;
-        border:none;
-        color:white;
-        font-size:1.5rem;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
     }
 
     @media screen and (min-width: 720px) and (min-height: 600px) {
@@ -83,7 +102,7 @@
     #whatisthispopover p {
         color: #003;
         padding: 0.5em;
-        font-size:1.25rem;
+        font-size: 1.25rem;
     }
 
     #whatisthispopover p.resources {
@@ -107,6 +126,6 @@
     }
 
     small {
-        font-size:.75rem;
+        font-size: 0.75rem;
     }
 </style>
