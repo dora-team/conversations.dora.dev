@@ -48,3 +48,5 @@ What makes development in your industry different from development in other indu
 What's the first thing you do when a test fails?  What about when the same test has been failing for days?
 Which part of your application annoys or frustrates your users the most?
 What would you work on if you were guaranteed two days of uninterrupted focus?
+What decisions will we make with this data?
+How will measuring $this improve our confidence about what we should do next?
