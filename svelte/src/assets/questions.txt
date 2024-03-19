@@ -50,3 +50,4 @@ Which part of your application annoys or frustrates your users the most?
 What would you work on if you were guaranteed two days of uninterrupted focus?
 What decisions will we make with this data?
 How will measuring $this improve our confidence about what we should do next?
+What signals tell you it's OK to deploy this change? What signals tell you it's not?
