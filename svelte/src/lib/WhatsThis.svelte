@@ -2,17 +2,20 @@
     import { onMount } from "svelte";
     onMount(() => {
         if (typeof window !== "undefined") {
-
             // if queryparam `?whatsthis` is specified, open the "what's this" popover on page load
             const searchParams = new URLSearchParams(window.location.search);
-            if(searchParams.has("whatsthis") && HTMLElement.prototype.hasOwnProperty("popover")) {
-                document.querySelector('#whatisthispopover').showPopover();
+            if (
+                searchParams.has("whatsthis") &&
+                HTMLElement.prototype.hasOwnProperty("popover")
+            ) {
+                document.querySelector("#whatisthispopover").showPopover();
             }
         }
     });
 </script>
 
 <div class="whatsthis">
+    <div class="site_name">conversations.dora.dev</div>
     <button class="material-symbols-outlined" popovertarget="whatisthispopover"
         >help</button
     >
@@ -49,11 +52,20 @@
 
 <style>
     .whatsthis {
-        display: inline-block;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
         position: fixed;
         right: 0;
         top: 0;
         padding: 1em;
+    }
+
+    .whatsthis .site_name {
+        font-size:1.25rem;
+        opacity:.6;
+        user-select: none;
+        display: none; /* don't show unless screen is large enough (see below) */
     }
 
     .whatsthis button {
@@ -66,6 +78,10 @@
     @media screen and (min-width: 720px) and (min-height: 600px) {
         .whatsthis button {
             font-size: 2rem;
+        }
+
+        .whatsthis .site_name {
+            display: block;
         }
     }
 
