@@ -51,3 +51,5 @@ What would you work on if you were guaranteed two days of uninterrupted focus?
 What decisions will we make with this data?
 How will measuring <some_metric> improve our confidence about what we should do next?
 What signals tell us it’s OK to deploy a change? What signals tell us it’s not?
+Why did it fail last time? What lessons did you learn? What would you do differently this time?
+What ideas would you like your team to try?
