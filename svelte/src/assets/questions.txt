@@ -53,3 +53,4 @@ How will measuring <some_metric> improve our confidence about what we should do 
 What signals tell us it’s OK to deploy a change? What signals tell us it’s not?
 Why did it fail last time? What lessons did you learn? What would you do differently this time?
 What ideas would you like your team to try?
+What could you do with 10% more engineering time?
