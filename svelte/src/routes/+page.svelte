@@ -55,10 +55,9 @@
 
     onMount(() => {
         const params = new URLSearchParams(location.search);
-        const q = params.get("q");
-        console.log(q);
-        if (q) {
-            const index = questions.findIndex((q) => q.hash === q);
+        const hash = params.get("q");
+        if (hash) {
+            const index = questions.findIndex((q) => q.hash === hash);
             if (index !== -1) {
                 current_question = index;
                 active_questions = [questions[current_question]];
