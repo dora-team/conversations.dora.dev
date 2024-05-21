@@ -2,7 +2,7 @@
     import "../app.css";
 
     import { browser } from "$app/environment";
-    import { onDestroy } from "svelte";
+    import { onMount, onDestroy } from "svelte";
 
     import dora_logo from "$lib/img/icon.svg";
     import questions_raw from "../assets/questions.txt?raw";
@@ -12,10 +12,13 @@
     let questions = questions_raw
         .split("\n")
         .filter((e) => e) // filter out any blank questions (blank lines in questions.txt)
+        .map((question_text) => {
+            return { question_text, hash: hash(question_text) };
+        })
         .sort((a, b) => 0.5 - Math.random()); // shuffle question order
 
     let current_question = $state(0);
-    let active_questions = $state([questions[0]]);
+    let active_questions = $state([]);
 
     let timer_width_in_vw = $state(100);
     let timer_duration_in_msec = 15000;
@@ -24,6 +27,50 @@
     let timer_elapsed = 0;
     let frame;
     let isPlaying = $state(true);
+
+    function hash(s) {
+        const hash = Array.from(s).reduce((hash, char) => {
+            const result = (hash << 5) - hash + char.charCodeAt(0);
+            return result & result;
+        }, 0);
+        return Math.abs(hash).toString(24);
+    }
+
+    function updateQuestionParam() {
+        if (window.history.pushState) {
+            const url = new URL(location);
+            url.searchParams.set(
+                "q",
+                active_questions[active_questions.length - 1].hash
+            );
+            // TODO: This causes svelte to warn about using the built-in sveltekit apis.
+            // However, the built-in apis don't seem to work yet :P. Revisit when Svelte 5 is released.
+            window.history.pushState(
+                {},
+                "",
+                url
+            );
+        }
+    }
+
+    onMount(() => {
+        const params = new URLSearchParams(location.search);
+        const hash = params.get("q");
+        if (hash) {
+            const index = questions.findIndex((q) => q.hash === hash);
+            if (index !== -1) {
+                current_question = index;
+                active_questions = [questions[current_question]];
+                console.log(active_questions[0], current_question)
+            } else {
+                console.error("Question not found");
+            }
+        }
+        if (active_questions.length === 0) {
+            active_questions.push(questions[current_question]);
+        }
+        updateQuestionParam();
+    });
 
     function startTimer() {
         isPlaying = true;
@@ -53,6 +100,7 @@
     function next() {
         current_question++;
         active_questions.push(questions[current_question % questions.length]);
+        updateQuestionParam();
     }
 
     function last() {
@@ -83,7 +131,7 @@
     </header>
 
     <questions>
-        {#each active_questions as question_text}
+        {#each active_questions as { question_text }}
             <Question {question_text} />
         {/each}
     </questions>
