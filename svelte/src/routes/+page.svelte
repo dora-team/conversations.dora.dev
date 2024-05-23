@@ -9,7 +9,8 @@
     import Question from "../lib/Question.svelte";
     import WhatsThis from "../lib/WhatsThis.svelte";
 
-    let questions = questionsUnrandomized.toSorted((a, b) => 0.5 - Math.random()); // shuffle question order
+    // create copy of array on-the-fly, because netlify barfs when we try to use toSorted()
+    let questions = [...questionsUnrandomized].sort((a, b) => 0.5 - Math.random()); // shuffle question order
 
     let current_question = $state(0);
     let active_questions = $state([]);
