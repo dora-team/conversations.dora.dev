@@ -5,17 +5,11 @@
     import { onMount, onDestroy } from "svelte";
 
     import dora_logo from "$lib/img/icon.svg";
-    import questions_raw from "../assets/questions.txt?raw";
+    import { questionsUnrandomized, hash } from "$lib/index.js";
     import Question from "../lib/Question.svelte";
     import WhatsThis from "../lib/WhatsThis.svelte";
 
-    let questions = questions_raw
-        .split("\n")
-        .filter((e) => e) // filter out any blank questions (blank lines in questions.txt)
-        .map((question_text) => {
-            return { question_text, hash: hash(question_text) };
-        })
-        .sort((a, b) => 0.5 - Math.random()); // shuffle question order
+    let questions = questionsUnrandomized.toSorted((a, b) => 0.5 - Math.random()); // shuffle question order
 
     let current_question = $state(0);
     let active_questions = $state([]);
@@ -27,15 +21,7 @@
     let timer_elapsed = 0;
     let frame;
     let isPlaying = $state(true);
-
-    function hash(s) {
-        const hash = Array.from(s).reduce((hash, char) => {
-            const result = (hash << 5) - hash + char.charCodeAt(0);
-            return result & result;
-        }, 0);
-        return Math.abs(hash).toString(24);
-    }
-
+    
     function updateQuestionParam() {
         if (window.history.pushState) {
             const url = new URL(location);
