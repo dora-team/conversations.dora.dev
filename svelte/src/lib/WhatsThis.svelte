@@ -33,22 +33,20 @@
     >
 </div>
 
-
-<div 
-    popover
-    id="whatisthispopover" 
->
+<div popover id="whatisthispopover">
     <div class="tabs">
-        <button class="tab {tab === 'about' ? 'active' : ''}"
+        <button
+            class="tab {tab === 'about' ? 'active' : ''}"
             on:click={() => {
                 tab = "about";
-            }}
-        >About</button>
-        <button class="tab {tab === 'questions' ? 'active' : ''}"
+            }}>About</button
+        >
+        <button
+            class="tab {tab === 'questions' ? 'active' : ''}"
             on:click={() => {
                 tab = "questions";
-            }}
-        >All Questions</button>
+            }}>All Questions</button
+        >
     </div>
 
     {#if tab === "about"}
@@ -56,18 +54,14 @@
         <p>
             Want better team performance and well-being? Start a conversation to
             understand where you are today, and discover opportunities for
-            improvement. Use these questions to kick off a discussion and see where
-            it takes you.
+            improvement. Use these questions to kick off a discussion and see
+            where it takes you.
         </p>
         <p>
-            <a href="/submit" target="_blank" class="submit">Suggest a question</a>
-            <br />
-            <small
-                >or, <a
-                    href="https://github.com/dora-team/conversations.dora.dev/tree/main/svelte/src/assets"
-                    target="_blank">open a PR</a
-                ></small
-            >
+            Got a question? <a
+                href="https://github.com/dora-team/conversations.dora.dev/tree/main/svelte/src/assets"
+                target="_blank">Submit a pull request</a
+            > to add it!
         </p>
         <p class="resources">
             Find more resources at <a href="https://dora.dev" target="_blank"
@@ -82,9 +76,13 @@
         <h1>All Questions</h1>
         <div class="scroll">
             <ul>
-            {#each questionsUnrandomized as { question_text, hash }}
-                <li class="question_link"><a href={getLink(hash)} target="_blank">{question_text}</a></li>
-            {/each}
+                {#each questionsUnrandomized as { question_text, hash }}
+                    <li class="question_link">
+                        <a href={getLink(hash)} target="_blank"
+                            >{question_text}</a
+                        >
+                    </li>
+                {/each}
             </ul>
         </div>
     {/if}
@@ -136,8 +134,8 @@
     }
 
     .whatsthis .site_name {
-        font-size:1.25rem;
-        opacity:.6;
+        font-size: 1.25rem;
+        opacity: 0.6;
         user-select: none;
         display: none; /* don't show unless screen is large enough (see below) */
     }
@@ -218,7 +216,7 @@
     small {
         font-size: 0.75rem;
     }
-    
+
     .scroll {
         overflow-y: scroll;
         height: 40vh;
