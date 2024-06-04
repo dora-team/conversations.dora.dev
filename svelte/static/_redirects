@@ -1,0 +1,2 @@
+# Redirects from what the browser requests to what we serve
+/submit https://github.com/dora-team/conversations.dora.dev/tree/main/svelte/src/assets 301

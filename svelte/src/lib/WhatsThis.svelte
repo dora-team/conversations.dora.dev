@@ -59,7 +59,7 @@
         </p>
         <p>
             Got a question? <a
-                href="https://github.com/dora-team/conversations.dora.dev/tree/main/svelte/src/assets"
+                href="/submit"
                 target="_blank">Submit a pull request</a
             > to add it!
         </p>
