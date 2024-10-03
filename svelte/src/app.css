@@ -12,11 +12,18 @@
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 
-  --dora-blue: #005d8d;
-  --dora-dark-blue: #003a59;
 
-  background-color: var(--dora-blue);
-  color:white;
+  --dora-black: #221E27;
+  --dora-sky-blue: #49a2ec;
+  --dora-warm-white: #f0EEEA;
+  --dora-mauve: #b8affe;
+  --dora-vermillion: #f45c24;
+  --dora-spotlight-yellow: #f2e15c;
+
+  --dora-background-color: var(--dora-sky-blue);
+
+  background-color: var(--dora-background-color);
+  color:#f0EEEA;
 }
 
 .material-symbols-outlined {

@@ -22,7 +22,7 @@
     let timer_elapsed = 0;
     let frame;
     let isPlaying = $state(true);
-    
+
     function updateQuestionParam() {
         if (window.history.pushState) {
             const url = new URL(location);
@@ -161,12 +161,12 @@
     }
 
     header img {
-        height: 6vh;
+        height: 10vh;
         margin-top: 2vh;
     }
     questions {
         position: absolute;
-        top: 10vh;
+        top: 15vh;
         height: 80vh;
     }
 

@@ -94,7 +94,7 @@
             text-decoration: none;
         }
 
-        color: var(--dora-blue);
+        color: var(--dora-background-color);
         text-align: left;
         margin-bottom: 0.5em;
         margin-right: 1em;
@@ -171,7 +171,7 @@
     }
 
     div.modal h1 {
-        color: var(--dora-blue);
+        color: var(--dora-background-color);
     }
 
     .close {
@@ -200,15 +200,15 @@
 
     #whatisthispopover p a {
         text-decoration: none;
-        color: var(--dora-blue);
+        color: var(--dora-background-color);
     }
 
     a.submit {
         font-size: 1.5em;
         font-weight: bold;
-        color: var(--dora-blue);
+        color: var(--dora-background-color);
         text-decoration: none;
-        border: 1px solid var(--dora-blue);
+        border: 1px solid var(--dora-background-color);
         display: inline-block;
         padding: 0.25em;
     }
