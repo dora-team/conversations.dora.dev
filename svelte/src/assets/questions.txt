@@ -55,3 +55,4 @@ Why did it fail last time? What lessons did you learn? What would you do differe
 What ideas would you like your team to try?
 What could you do with 10% more engineering time?
 Is work distributed equitably on your team? How do you know?
+How much time per week do developers spend waiting for access to a test environment?
