@@ -1,11 +1,13 @@
 /* 2024 DORA Brand base stylesheet */
 /* TODO: move this to the dora.dev repo, and reference it from there */
 
-@import url(//fonts.googleapis.com/css2?family=Google+Sans:wght@100,200,300,400,500,600,700,800,900);
+@import url(//fonts.googleapis.com/css?family=Google+Sans:wght@100,200,300,400,500,600,700,800,900);
 
 :root {
     /* base DORA font spec */
     font-family: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
+    font-weight:300;
+    font-style: normal;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
