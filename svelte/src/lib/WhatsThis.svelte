@@ -58,9 +58,8 @@
             where it takes you.
         </p>
         <p>
-            Got a question? <a
-                href="/submit"
-                target="_blank">Submit a pull request</a
+            Got a question? <a href="/submit" target="_blank"
+                >Submit a pull request</a
             > to add it!
         </p>
         <p class="resources">
@@ -89,12 +88,13 @@
 </div>
 
 <style lang="scss">
+
     .question_link {
         a {
             text-decoration: none;
+            color: var(--dora-tertiary-b);
         }
 
-        color: var(--dora-background-color);
         text-align: left;
         margin-bottom: 0.5em;
         margin-right: 1em;
@@ -111,16 +111,12 @@
     }
 
     .tab {
-        background-color: #f0f0f0;
+        background-color: var(--dora-primary-light);
         border: none;
         padding: 10px 20px;
         cursor: pointer;
         transition: background-color 0.3s;
         flex-grow: 1;
-    }
-
-    .tab:not(:last-child) {
-        border-right: 1px solid #ccc;
     }
 
     .whatsthis {
@@ -135,15 +131,16 @@
 
     .whatsthis .site_name {
         font-size: 1.25rem;
-        opacity: 0.6;
+        opacity: .85;
         user-select: none;
         display: none; /* don't show unless screen is large enough (see below) */
+        color: var(--dora-primary-light);
     }
 
     .whatsthis button {
         background: transparent;
         border: none;
-        color: white;
+        color: var(--dora-primary-light);
         font-size: 1.5rem;
     }
 
@@ -158,14 +155,15 @@
     }
 
     ::backdrop {
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: var(--dora-primary-dark);
+        opacity: 0.8;
         transition: opacity 0.3s;
     }
 
     #whatisthispopover:popover-open {
         width: 80vw;
         max-width: 50em;
-        background-color: white;
+        background-color: var(--dora-primary-light);
         padding: 0.5em;
         border-radius: 0.5em;
     }
@@ -175,9 +173,8 @@
     }
 
     .close {
-        color: grey;
         cursor: pointer;
-        border-top: 1px solid lightgrey;
+        border-top: 1px solid var(--dora-primary-medium);
         padding-top: 0.5em;
         font-size: 85%;
     }
@@ -188,7 +185,6 @@
     }
 
     #whatisthispopover p {
-        color: #003;
         padding: 0.5em;
         font-size: 1.25rem;
     }
@@ -200,15 +196,13 @@
 
     #whatisthispopover p a {
         text-decoration: none;
-        color: var(--dora-background-color);
+        color: var(--dora-secondary-a);
     }
 
     a.submit {
         font-size: 1.5em;
         font-weight: bold;
-        color: var(--dora-background-color);
         text-decoration: none;
-        border: 1px solid var(--dora-background-color);
         display: inline-block;
         padding: 0.25em;
     }
@@ -223,12 +217,12 @@
     }
 
     .tab:not(.active) {
-        background-color: #f0f0f0;
-        border-bottom: 1px solid #ccc;
+        background-color: var(--dora-primary-medium);
+        color: var(--dora-primary-light);
     }
 
     .tab.active {
-        background-color: white;
-        border-bottom: 1px solid white;
+        background-color: var(--dora-primary-light);
+        border-bottom: 1px solid var(--dora-primary-light);
     }
 </style>

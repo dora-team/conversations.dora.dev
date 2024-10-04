@@ -28,7 +28,6 @@
     question {
         width: 100vw;
         height:100%;
-        background-color: var(--dora-background-color);
         left: 0px;
         font-size: 2.5rem;
         display: flex;
@@ -52,10 +51,12 @@
 
     p {
         text-align: center;
-        text-shadow: var(--dora-black) 2px 2px;
+        font-weight: 500;
+        text-shadow: rgba(from var(--dora-primary-dark) r g b / .4) 2px 2px;
         margin-block-start: 1rem;
         margin-block-end: 1rem;
         transition: opacity .2s ease-out;
+        letter-spacing: -.1rem;
     }
 
     question:not(:last-child)  p {

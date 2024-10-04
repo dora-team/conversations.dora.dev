@@ -192,7 +192,7 @@
         left: 0;
         height: 2px;
         width: 100vw;
-        background-color: white;
+        background-color: var(--dora-primary-light);
         opacity: 0.5;
     }
 </style>
