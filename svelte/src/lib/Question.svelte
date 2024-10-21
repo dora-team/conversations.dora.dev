@@ -26,9 +26,9 @@
 
 <style>
     question {
+        background-color: var(--dora-secondary-b);
         width: 100vw;
         height:100%;
-        background-color: var(--dora-blue);
         left: 0px;
         font-size: 2.5rem;
         display: flex;
@@ -44,22 +44,24 @@
     }
 }
 
-    p_wrapper {       
+    p_wrapper {
         width:100vw;
-        flex-direction: column; 
+        flex-direction: column;
         padding: 0 5vw 5vw 5vw;
     }
 
     p {
         text-align: center;
-        text-shadow: var(--dora-dark-blue) 2px 2px;
+        font-weight: 500;
+        text-shadow: color-mix(in srgb, var(--dora-secondary-b), var(--dora-primary-dark) 40%) 2px 2px 4px;
         margin-block-start: 1rem;
         margin-block-end: 1rem;
         transition: opacity .2s ease-out;
+        letter-spacing: -.1rem;
     }
 
     question:not(:last-child)  p {
         /* as a question is replaced, fade it out */
-        opacity:0; 
+        opacity:0;
     }
 </style>
