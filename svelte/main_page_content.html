@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./icon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+	<style data-sveltekit>
+    header.s-y_bCXRrkrYfP {
+        position: absolute;
+        top: 0;
+        height: 10vh;
+        width: 100vw;
+        text-align: center;
+    }
+
+    header.s-y_bCXRrkrYfP img:where(.s-y_bCXRrkrYfP) {
+        height: 10vh;
+        margin-top: 2vh;
+    }
+    questions.s-y_bCXRrkrYfP {
+        position: absolute;
+        top: 15vh;
+        height: 80vh;
+    }
+
+    footer.s-y_bCXRrkrYfP {
+        height: 9vh;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer.s-y_bCXRrkrYfP span:where(.s-y_bCXRrkrYfP) {
+        display: inline-block;
+        padding: 0 1em;
+    }
+
+    countdown.s-y_bCXRrkrYfP {
+        display: block;
+        position: absolute;
+        bottom: 9.5vh;
+        left: 0;
+        height: 2px;
+        width: 100vw;
+        background-color: var(--dora-primary-light);
+        opacity: 0.5;
+    }
+ .s-y_bCXRrkrYfP{}
+@import url(//fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200);
+@import url(//fonts.googleapis.com/css?family=Google+Sans:wght@100,200,300,400,500,600,700,800,900);
+/* 2024 DORA Brand base stylesheet */
+:root {
+    /* base DORA font spec */
+    font-family: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
+    font-weight:300;
+    font-style: normal;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* DORA brand colors 2024 */
+    --dora-black: rgb(34, 30, 39);
+    --dora-warm-white: rgb(240, 238, 234);
+    --dora-sky-blue: rgb(73, 160, 236);
+    --dora-vermillion: rgb(245, 90, 36);
+    --dora-spotlight-yellow: rgb(240, 225, 90);
+    --dora-mauve: rgb(184, 175, 254);
+    --dora-deep-plum: rgb(114, 2, 92);
+    --dora-prussian-blue: rgb(11, 57, 84);
+
+    /* map brand colors to semantic definitions */
+    --dora-primary-dark: var(--dora-black);
+    --dora-primary-light: var(--dora-warm-white);
+    --dora-highlight: var(--dora-spotlight-yellow);
+    --dora-secondary-a: var(--dora-vermillion);
+    --dora-secondary-b: var(--dora-sky-blue);
+    --dora-secondary-c: var(--dora-mauve);
+    --dora-tertiary-a: var(--dora-deep-plum);
+    --dora-tertiary-b: var(--dora-prussian-blue);
+
+    --dora-primary-medium: color-mix(in srgb, var(--dora-primary-light), var(--dora-primary-dark) 30%);
+}
+:root {
+  line-height: 1.25;
+  font-weight: 400;
+  box-sizing: border-box;
+
+  background-color: var(--dora-secondary-b);
+  color:var(--dora-primary-light);
+}
+.material-symbols-outlined {
+    cursor: pointer;
+    opacity: 0.6;
+    font-size: 2em;
+    transition: opacity 0.1s;
+    user-select: none;
+}
+.material-symbols-outlined:hover {
+    opacity: 0.85;
+}
+
+    question.s-6ygeTib9J2f4 {
+        background-color: var(--dora-secondary-b);
+        width: 100vw;
+        height:100%;
+        left: 0px;
+        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        overflow:hidden;
+    }
+
+    @media screen and (min-width:720px) and (min-height:600px) {
+    question.s-6ygeTib9J2f4 {
+        font-size:5rem;
+    }
+}
+
+    .p-wrapper.s-6ygeTib9J2f4 {
+        width:100vw;
+        flex-direction: column;
+        padding: 0 5vw 5vw 5vw;
+    }
+
+    p.s-6ygeTib9J2f4 {
+        text-align: center;
+        font-weight: 500;
+        text-shadow: color-mix(in srgb, var(--dora-secondary-b), var(--dora-primary-dark) 40%) 2px 2px 4px;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+        transition: opacity .2s ease-out;
+        letter-spacing: -.1rem;
+    }
+
+    question.s-6ygeTib9J2f4:not(:last-child)  p:where(.s-6ygeTib9J2f4) {
+        /* as a question is replaced, fade it out */
+        opacity:0;
+    }
+ .s-6ygeTib9J2f4{}
+
+
+    .question_link.s-YWyKj1keAvZ1 {
+        a:where(.s-YWyKj1keAvZ1) {
+            text-decoration: none;
+            color: var(--dora-tertiary-b);
+        }
+
+        text-align: left;
+        margin-bottom: 0.5em;
+        margin-right: 1em;
+    }
+
+    .tabs.s-YWyKj1keAvZ1 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        width: calc(100% + 2em);
+        margin-top: -0.5em;
+        margin-left: -1em;
+        margin-right: -1em;
+    }
+
+    .tab.s-YWyKj1keAvZ1 {
+        background-color: var(--dora-primary-light);
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        flex-grow: 1;
+    }
+
+    .whatsthis.s-YWyKj1keAvZ1 {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        padding: 1em;
+    }
+
+    .whatsthis.s-YWyKj1keAvZ1 .site_name:where(.s-YWyKj1keAvZ1) {
+        font-size: 1.25rem;
+        opacity: .85;
+        user-select: none;
+        display: none; /* don't show unless screen is large enough (see below) */
+        color: var(--dora-primary-light);
+    }
+
+    .whatsthis.s-YWyKj1keAvZ1 button:where(.s-YWyKj1keAvZ1) {
+        background: transparent;
+        border: none;
+        color: var(--dora-primary-light);
+        font-size: 1.5rem;
+    }
+
+    @media screen and (min-width: 720px) and (min-height: 600px) {
+        .whatsthis.s-YWyKj1keAvZ1 button:where(.s-YWyKj1keAvZ1) {
+            font-size: 2rem;
+        }
+
+        .whatsthis.s-YWyKj1keAvZ1 .site_name:where(.s-YWyKj1keAvZ1) {
+            display: block;
+        }
+    }
+
+    .s-YWyKj1keAvZ1::backdrop {
+        background-color: var(--dora-primary-dark);
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    #whatisthispopover.s-YWyKj1keAvZ1:popover-open {
+        width: 80vw;
+        max-width: 50em;
+        background-color: var(--dora-primary-light);
+        padding: 0.5em;
+        border-radius: 0.5em;
+    }
+
+    /* (unused) div.modal h1 {
+        color: var(--dora-background-color);
+    }*/
+
+    .close.s-YWyKj1keAvZ1 {
+        cursor: pointer;
+        border-top: 1px solid var(--dora-primary-medium);
+        padding-top: 0.5em;
+        font-size: 85%;
+    }
+    .close.s-YWyKj1keAvZ1 button:where(.s-YWyKj1keAvZ1) {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    #whatisthispopover.s-YWyKj1keAvZ1 p:where(.s-YWyKj1keAvZ1) {
+        padding: 0.5em;
+        font-size: 1.25rem;
+    }
+
+    #whatisthispopover.s-YWyKj1keAvZ1 p.resources:where(.s-YWyKj1keAvZ1) {
+        font-weight: 200;
+        font-size: 1rem;
+    }
+
+    #whatisthispopover.s-YWyKj1keAvZ1 p:where(.s-YWyKj1keAvZ1) a:where(.s-YWyKj1keAvZ1) {
+        text-decoration: none;
+        color: var(--dora-secondary-a);
+    }
+
+    /* (unused) a.submit {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0.25em;
+    }*/
+
+    /* (unused) small {
+        font-size: 0.75rem;
+    }*/
+
+    .scroll.s-YWyKj1keAvZ1 {
+        overflow-y: scroll;
+        height: 40vh;
+    }
+
+    .tab.s-YWyKj1keAvZ1:not(.active) {
+        background-color: var(--dora-primary-medium);
+        color: var(--dora-primary-light);
+    }
+
+    .tab.active.s-YWyKj1keAvZ1 {
+        background-color: var(--dora-primary-light);
+        border-bottom: 1px solid var(--dora-primary-light);
+    }
+ .s-YWyKj1keAvZ1{}</style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPD5G9ZEWS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GPD5G9ZEWS');
+    </script>
+</head>
+
+<body data-sveltekit-preload-data="hover" style="margin:0px;padding:0px;overflow: hidden;">
+    <div style="display: contents"><!--[--><!--[--><!----><!----><main class="s-y_bCXRrkrYfP"><header class="s-y_bCXRrkrYfP"><a href="https://dora.dev" target="_blank" class="s-y_bCXRrkrYfP"><img src="/src/lib/img/icon.svg" alt="DORA" class="s-y_bCXRrkrYfP"></a> <div class="whatsthis s-YWyKj1keAvZ1"><div class="site_name s-YWyKj1keAvZ1">conversations.dora.dev</div> <button class="material-symbols-outlined s-YWyKj1keAvZ1" popovertarget="whatisthispopover">help</button></div> <div popover="" id="whatisthispopover" class="s-YWyKj1keAvZ1"><div class="tabs s-YWyKj1keAvZ1"><button class="tab active s-YWyKj1keAvZ1">About</button> <button class="tab  s-YWyKj1keAvZ1">All Questions</button></div> <!--[--><h1 class="s-YWyKj1keAvZ1">Get better at getting better</h1> <p class="s-YWyKj1keAvZ1">Want better team performance and well-being? Start a conversation to
+            understand where you are today, and discover opportunities for
+            improvement. Use these questions to kick off a discussion and see
+            where it takes you.</p> <p class="s-YWyKj1keAvZ1">Got a question? <a href="/submit" target="_blank" class="s-YWyKj1keAvZ1">Submit a pull request</a> to add it!</p> <p class="resources s-YWyKj1keAvZ1">Find more resources at <a href="https://dora.dev" target="_blank" class="s-YWyKj1keAvZ1">dora.dev</a>, and join our global community of practice at <a href="https://dora.community" target="_blank" class="s-YWyKj1keAvZ1">dora.community.</a></p> <div class="close s-YWyKj1keAvZ1"><button popovertarget="whatisthispopover" class="s-YWyKj1keAvZ1">close</button></div><!--]--></div><!----></header> <questions class="s-y_bCXRrkrYfP"><!--[--><!--]--></questions> <!--[--><countdown style="width:100vw" class="s-y_bCXRrkrYfP"></countdown><!--]--> <footer class="s-y_bCXRrkrYfP"><span class="material-symbols-outlined s-y_bCXRrkrYfP" disabled style="opacity: 0;">chevron_left</span> <span class="material-symbols-outlined s-y_bCXRrkrYfP"><!--[-->stop_circle<!--]--></span> <span class="material-symbols-outlined s-y_bCXRrkrYfP" style="opacity: 0;">chevron_right</span></footer></main><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_dev = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/node_modules/@sveltejs/kit/src/runtime/client/entry.js"),
+						import("/@fs/app/svelte/.svelte-kit/generated/client/app.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+</body>
+
+</html>

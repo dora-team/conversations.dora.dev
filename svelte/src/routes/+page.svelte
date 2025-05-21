@@ -2,6 +2,7 @@
     import "../app.css";
 
     import { browser } from "$app/environment";
+    import { goto } from "$app/navigation";
     import { onMount, onDestroy } from "svelte";
 
     import dora_logo from "$lib/img/icon.svg";
@@ -24,20 +25,9 @@
     let isPlaying = $state(true);
 
     function updateQuestionParam() {
-        if (window.history.pushState) {
-            const url = new URL(location);
-            url.searchParams.set(
-                "q",
-                active_questions[active_questions.length - 1].hash
-            );
-            // TODO: This causes svelte to warn about using the built-in sveltekit apis.
-            // However, the built-in apis don't seem to work yet :P. Revisit when Svelte 5 is released.
-            window.history.pushState(
-                {},
-                "",
-                url
-            );
-        }
+        const questionHash = active_questions[active_questions.length - 1].hash;
+        const url = `?q=${questionHash}`;
+        goto(url, { keepfocus: true, replaceState: true, noscroll: true });
     }
 
     onMount(() => {

@@ -17,11 +17,11 @@
     in:fly={{ x: "100vw", duration: 500 }}
     out:fly={{ x: "100vw", duration: 500 }}
 >
-    <p_wrapper>
+    <div class="p-wrapper">
     {#each question_text_sentences as sentence}
         <p>{sentence}</p>
     {/each}
-</p_wrapper>
+</div>
 </question>
 
 <style>
@@ -44,7 +44,7 @@
     }
 }
 
-    p_wrapper {
+    .p-wrapper {
         width:100vw;
         flex-direction: column;
         padding: 0 5vw 5vw 5vw;
