@@ -13,19 +13,19 @@
     });
 </script>
 
-<question
+<div class="question"
     in:fly={{ x: "100vw", duration: 500 }}
     out:fly={{ x: "100vw", duration: 500 }}
 >
-    <p_wrapper>
+    <div class="p_wrapper">
     {#each question_text_sentences as sentence}
         <p>{sentence}</p>
     {/each}
-</p_wrapper>
-</question>
+    </div>
+</div>
 
 <style>
-    question {
+    div.question {
         background-color: var(--dora-secondary-b);
         width: 100vw;
         height:100%;
@@ -39,12 +39,12 @@
     }
 
     @media screen and (min-width:720px) and (min-height:600px) {
-    question {
+    div.question {
         font-size:5rem;
     }
 }
 
-    p_wrapper {
+    div.p_wrapper {
         width:100vw;
         flex-direction: column;
         padding: 0 5vw 5vw 5vw;
@@ -60,7 +60,7 @@
         letter-spacing: -.1rem;
     }
 
-    question:not(:last-child)  p {
+   div.question:not(:last-child)  p {
         /* as a question is replaced, fade it out */
         opacity:0;
     }

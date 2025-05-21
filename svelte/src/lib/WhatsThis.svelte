@@ -168,9 +168,6 @@
         border-radius: 0.5em;
     }
 
-    div.modal h1 {
-        color: var(--dora-background-color);
-    }
 
     .close {
         cursor: pointer;
@@ -197,18 +194,6 @@
     #whatisthispopover p a {
         text-decoration: none;
         color: var(--dora-secondary-a);
-    }
-
-    a.submit {
-        font-size: 1.5em;
-        font-weight: bold;
-        text-decoration: none;
-        display: inline-block;
-        padding: 0.25em;
-    }
-
-    small {
-        font-size: 0.75rem;
     }
 
     .scroll {
