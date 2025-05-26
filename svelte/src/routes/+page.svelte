@@ -2,7 +2,8 @@
     import "../app.css";
 
     import { browser } from "$app/environment";
-    import { onMount, onDestroy } from "svelte";
+    import { onMount, onDestroy, tick } from "svelte";
+    import { pushState } from "$app/navigation";
 
     import dora_logo from "$lib/img/icon.svg";
     import { questionsUnrandomized, hash } from "$lib/index.js";
@@ -10,7 +11,9 @@
     import WhatsThis from "../lib/WhatsThis.svelte";
 
     // create copy of array on-the-fly, because netlify barfs when we try to use toSorted()
-    let questions = [...questionsUnrandomized].sort((a, b) => 0.5 - Math.random()); // shuffle question order
+    let questions = [...questionsUnrandomized].sort(
+        (a, b) => 0.5 - Math.random(),
+    ); // shuffle question order
 
     let current_question = $state(0);
     let active_questions = $state([]);
@@ -24,23 +27,18 @@
     let isPlaying = $state(true);
 
     function updateQuestionParam() {
-        if (window.history.pushState) {
-            const url = new URL(location);
-            url.searchParams.set(
-                "q",
-                active_questions[active_questions.length - 1].hash
-            );
-            // TODO: This causes svelte to warn about using the built-in sveltekit apis.
-            // However, the built-in apis don't seem to work yet :P. Revisit when Svelte 5 is released.
-            window.history.pushState(
-                {},
-                "",
-                url
-            );
-        }
+        const url = new URL(location);
+        url.searchParams.set(
+            "q",
+            active_questions[active_questions.length - 1].hash,
+        );
+        pushState(url);
     }
 
-    onMount(() => {
+    onMount(async () => {
+        // run a tick to initialize router
+        await tick();
+
         const params = new URLSearchParams(location.search);
         const hash = params.get("q");
         if (hash) {
@@ -48,7 +46,6 @@
             if (index !== -1) {
                 current_question = index;
                 active_questions = [questions[current_question]];
-                console.log(active_questions[0], current_question)
             } else {
                 console.error("Question not found");
             }
@@ -130,7 +127,7 @@
     <footer>
         <span
             class="material-symbols-outlined"
-            on:click={last}
+            onclick={last}
             disabled={current_question == 0}
             style:opacity={current_question == 0 || isPlaying ? 0 : ".5"}
             >chevron_left</span
@@ -138,14 +135,14 @@
 
         <span
             class="material-symbols-outlined"
-            on:click={() => {
+            onclick={() => {
                 isPlaying ? stopTimer() : advanceAndReStartTimer();
             }}
             >{#if isPlaying}stop_circle{:else}play_circle{/if}</span
         >
         <span
             class="material-symbols-outlined"
-            on:click={next}
+            onclick={next}
             style:opacity={isPlaying ? 0 : ".5"}>chevron_right</span
         >
     </footer>
