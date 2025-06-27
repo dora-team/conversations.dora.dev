@@ -1,8 +1,15 @@
 <script>
     import { onMount } from "svelte";
-    import { questionsUnrandomized } from "$lib/index.js";
+    import { page } from "$app/stores";
+    import { questionsUnrandomized, surveyQuestionsUnrandomized } from "$lib/index.js";
 
     let tab = $state("about");
+
+    let displayedQuestions = $derived(
+        $page.url.pathname === "/survey"
+            ? surveyQuestionsUnrandomized
+            : questionsUnrandomized,
+    );
 
     function getLink(hash) {
         // Get window.location.href without query params
@@ -75,7 +82,7 @@
         <h1>All Questions</h1>
         <div class="scroll">
             <ul>
-                {#each questionsUnrandomized as { question_text, hash }}
+                {#each displayedQuestions as { question_text, hash }}
                     <li class="question_link">
                         <a href={getLink(hash)} target="_blank"
                             >{question_text}</a
