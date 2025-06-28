@@ -4,7 +4,7 @@ Which parts of the survey made you feel confident or proud of the way your team 
 Where do you think we are already demonstrating the strong capabilities that DORA measures?
 What's a topic or capability from the survey that you feel represents your team's biggest opportunity for improvement?
 What friction or challenge did the questions bring to light for you?
-The survey covers the entire delivery process. From your unique role (as an Engineer, PM, QA, etc.), what’s one connection between your work and another part of the process that the survey made you think about differently?
+The survey covers the entire delivery process. From your unique role, what’s one connection between your work and another part of the process that the survey made you think about differently?
 What is one small, practical change we could make to our daily or weekly routines that would positively impact our collective well-being and sustainability?
 What excites or concerns you about AI in your context?
 What excites or concerns you about Platform Engineering in your context?

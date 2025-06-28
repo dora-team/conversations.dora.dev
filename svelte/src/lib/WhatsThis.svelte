@@ -44,13 +44,13 @@
     <div class="tabs">
         <button
             class="tab {tab === 'about' ? 'active' : ''}"
-            on:click={() => {
+            onclick={() => {
                 tab = "about";
             }}>About</button
         >
         <button
             class="tab {tab === 'questions' ? 'active' : ''}"
-            on:click={() => {
+            onclick={() => {
                 tab = "questions";
             }}>All Questions</button
         >
@@ -90,6 +90,9 @@
                     </li>
                 {/each}
             </ul>
+        </div>
+        <div class="close">
+            <button popovertarget="whatisthispopover">close</button>
         </div>
     {/if}
 </div>
