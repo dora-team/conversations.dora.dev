@@ -26,7 +26,7 @@
 
 <style>
     div.question {
-        background-color: var(--dora-secondary-b);
+        background-color: inherit;
         width: 100vw;
         height:100%;
         left: 0px;
@@ -53,7 +53,7 @@
     p {
         text-align: center;
         font-weight: 500;
-        text-shadow: color-mix(in srgb, var(--dora-secondary-b), var(--dora-primary-dark) 40%) 2px 2px 4px;
+        text-shadow: color-mix(in srgb, currentColor, var(--dora-primary-dark) 40%) 2px 2px 4px;
         margin-block-start: 1rem;
         margin-block-end: 1rem;
         transition: opacity .2s ease-out;
