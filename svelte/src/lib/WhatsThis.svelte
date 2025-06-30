@@ -1,14 +1,12 @@
 <script>
     import { onMount } from "svelte";
     import { page } from "$app/stores";
-    import { questionsUnrandomized, surveyQuestionsUnrandomized } from "$lib/index.js";
+    import { questionSets, questionSetPathMap } from "$lib/index.js";
 
     let tab = $state("about");
 
     let displayedQuestions = $derived(
-        $page.url.pathname === "/survey"
-            ? surveyQuestionsUnrandomized
-            : questionsUnrandomized,
+        questionSets[questionSetPathMap[$page.url.pathname]] || questionSets.conversation
     );
 
     function getLink(hash) {
