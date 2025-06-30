@@ -11,9 +11,18 @@ function processQuestions(rawQuestions) {
     .sort((a, b) => a.question_text.localeCompare(b.question_text));
 }
 
-export const questionsUnrandomized = processQuestions(questions_raw);
+const conversation = processQuestions(questions_raw);
+const survey = processQuestions(survey_questions_raw);
 
-export const surveyQuestionsUnrandomized = processQuestions(survey_questions_raw);
+export const questionSets = {
+  conversation, // default question set
+  survey,
+};
+
+export const questionSetPathMap = {
+  "/": "conversation", //defalut
+  "/survey": "survey",
+};
 
 export function hash(s) {
   const hash = Array.from(s).reduce((hash, char) => {
