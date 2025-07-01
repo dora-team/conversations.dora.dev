@@ -8,6 +8,6 @@ The survey covers the entire delivery process. From your unique role, what’s o
 What is one small, practical change we could make to our daily or weekly routines that would positively impact our collective well-being and sustainability?
 What excites or concerns you about AI in your context?
 What excites or concerns you about Platform Engineering in your context?
-What is a small experiment would your team like to try next week?
+What is a small experiment your team would like to try next week?
 How did reflecting on these questions make you think about our team's readiness for the future?
 What did you learn about what 'elite performance' means in 2025 simply by the types of questions the DORA survey is asking?
