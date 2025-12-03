@@ -5,8 +5,11 @@
 
     let tab = $state("about");
 
+    let whatisthispopover;
+
     let displayedQuestions = $derived(
-        questionSets[questionSetPathMap[$page.url.pathname]] || questionSets.conversation
+        questionSets[questionSetPathMap[$page.url.pathname]] ||
+            questionSets.conversation,
     );
 
     function getLink(hash) {
@@ -25,7 +28,7 @@
                 searchParams.has("whatsthis") &&
                 HTMLElement.prototype.hasOwnProperty("popover")
             ) {
-                document.querySelector("#whatisthispopover").showPopover();
+                whatisthispopover.showPopover();
             }
         }
     });
@@ -38,7 +41,7 @@
     >
 </div>
 
-<div popover id="whatisthispopover">
+<div bind:this={whatisthispopover} popover id="whatisthispopover">
     <div class="tabs">
         <button
             class="tab {tab === 'about' ? 'active' : ''}"
@@ -96,7 +99,6 @@
 </div>
 
 <style lang="scss">
-
     .question_link {
         a {
             text-decoration: none;
@@ -139,7 +141,7 @@
 
     .whatsthis .site_name {
         font-size: 1.25rem;
-        opacity: .85;
+        opacity: 0.85;
         user-select: none;
         display: none; /* don't show unless screen is large enough (see below) */
         color: var(--dora-primary-light);
@@ -175,7 +177,6 @@
         padding: 0.5em;
         border-radius: 0.5em;
     }
-
 
     .close {
         cursor: pointer;
