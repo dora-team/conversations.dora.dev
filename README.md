@@ -1,10 +1,24 @@
 # conversations.dora.dev
 
-## to develop locally
+[![Netlify Status](https://api.netlify.com/api/v1/badges/90820f65-464e-4803-a16c-68749aca01e8/deploy-status)](https://app.netlify.com/projects/conversations-dora-dev/deploys)
+
+# Start a conversation
+Want better team performance and well-being? Start a conversation to understand where you are today, and discover opportunities for improvement. The questions on [conversations.dora.dev](https://conversations.dora.dev) don't have easy answers. They're meant to provoke discussions among your team, or individual reflection. Use them as part of your journey of continuous improvement!
+
+### Implementation
+This site uses the [Svelte](https://svelte.dev) javascript framework.
+
+### Hosting
+The site is hosted on [Netlify](https://www.netlify.com/).
+
+## Local development
+
+To develop locally, run:
+
 - `npm install`
 - `npm run dev`
 
-## Adding a New Question Set
+### Adding a New Question Set
 To add a new set of questions, use the `create-question-set.sh` script.
 
 This script automates the creation of the necessary files and updates `src/lib/index.js`.
