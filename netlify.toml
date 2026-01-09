@@ -1,4 +1,4 @@
 [build]
   base = "/"
-  command = "npm run build"
+  command = "npm run build && npm run ci:test:e2e"
   publish = "build"

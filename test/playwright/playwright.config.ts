@@ -1,20 +1,20 @@
 import { defineConfig } from '@playwright/test';
 
-// default baseURL is local svelte server. Override by setting environment var PLAYWRIGHT_BASE_URL
-const defaultBaseURL = 'http://localhost:5173'
+const VITE_PREVIEW_PORT = 4173;
+const VITE_PREVIEW_URL = `http://localhost:${VITE_PREVIEW_PORT}`;
 
 
 export default defineConfig({
   testDir: './tests',
   outputDir: './test-results',
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:5173',
-    reuseExistingServer: true,
+    command: `npm run preview -- --port ${VITE_PREVIEW_PORT}`,
+    url: VITE_PREVIEW_URL,
+    reuseExistingServer: !process.env.CI,
     cwd: '../../',
   },
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || defaultBaseURL,
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || VITE_PREVIEW_URL,
     trace: 'on-first-retry',
   },
   reporter: [['html', { outputFolder: 'playwright-report' }]],

@@ -9,6 +9,9 @@ for (const { name, route } of testCases) {
   test.describe(name, () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(route);
+
+      // Hide the Netlify Drawer to prevent it from intercepting clicks
+      await page.addStyleTag({ content: 'div[data-netlify-deploy-id], iframe[title="Netlify Drawer"] { display: none !important; }' });
     });
 
     test('loading the page works and includes a question', async ({ page }) => {
