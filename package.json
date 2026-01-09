@@ -5,7 +5,10 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"test:e2e:run": "npx playwright test -c test/playwright/playwright.config.ts",
+		"test:e2e": "npm run build && npm run test:e2e:run",
+		"ci:test:e2e": "npx playwright install && npm run test:e2e:run"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.57.0",
