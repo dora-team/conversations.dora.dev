@@ -17,7 +17,7 @@
 		"@sveltejs/kit": "^2.53.4",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"svelte": "^5.53.6",
-		"vite": "^6.4.1"
+		"vite": "^6.4.2"
 	},
 	"type": "module",
 	"overrides": {
