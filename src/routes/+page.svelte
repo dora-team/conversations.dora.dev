@@ -1,7 +1,7 @@
 <script>
-    import dora_logo from "$lib/img/icon.svg";
-    import { questionSets } from "$lib/index.js";
-    import Conversation from "$lib/Conversation.svelte";
+    import dora_logo from "#lib/img/icon.svg";
+    import { questionSets } from "#lib";
+    import Conversation from "#lib/Conversation.svelte";
 </script>
 
 <Conversation

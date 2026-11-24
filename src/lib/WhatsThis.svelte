@@ -1,14 +1,14 @@
 <script>
     import { onMount } from "svelte";
-    import { page } from "$app/stores";
-    import { questionSets, questionSetPathMap } from "$lib/index.js";
+    import { page } from "$app/state";
+    import { questionSets, questionSetPathMap } from "#lib";
 
     let tab = $state("about");
 
     let whatisthispopover;
 
     let displayedQuestions = $derived(
-        questionSets[questionSetPathMap[$page.url.pathname]] ||
+        questionSets[questionSetPathMap[page.url.pathname]] ||
             questionSets.conversation,
     );
 
