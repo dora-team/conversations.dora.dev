@@ -51,9 +51,9 @@ else
   echo "Creating file: $PAGE_SVELTE_FILE"
   cat <<EOF_PAGE_SVELTE > "$PAGE_SVELTE_FILE"
 <script>
-    import dora_logo from "\$lib/img/icon.svg"; // Optional: update with your specific logo
-    import { questionSets } from "\$lib/index.js";
-    import Conversation from "\$lib/Conversation.svelte";
+    import dora_logo from "#lib/img/icon.svg"; // Optional: update with your specific logo
+    import { questionSets } from "#lib";
+    import Conversation from "#lib/Conversation.svelte";
 </script>
 
 <Conversation

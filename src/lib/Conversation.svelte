@@ -1,7 +1,7 @@
 <script>
     import "../app.css";
 
-    import { browser } from "$app/environment";
+    import { browser } from "$app/env";
     import { onMount, onDestroy, tick } from "svelte";
     import { pushState } from "$app/navigation";
 
