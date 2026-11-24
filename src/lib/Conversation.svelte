@@ -3,7 +3,7 @@
 
     import { browser } from "$app/env";
     import { onMount, onDestroy, tick } from "svelte";
-    import { pushState } from "$app/navigation";
+    import { goto } from "$app/navigation";
 
     import Question from "./Question.svelte";
     import WhatsThis from "./WhatsThis.svelte";
@@ -34,7 +34,7 @@
             "q",
             active_questions.length > 0 ? active_questions[active_questions.length - 1].hash : ''
         );
-        pushState(url);
+        goto(url, { shallow: true });
     }
 
     onMount(async () => {

@@ -89,6 +89,39 @@ for (const { name, route } of testCases) {
       await expect.poll(async () => getQuestionText()).toBe(initialQuestion);
     });
 
+    test('moving between questions updates the q URL parameter', async ({ page }) => {
+      if (route === '/') await page.locator('button:has-text("stop_circle")').click();
+
+      const getQ = () => new URL(page.url()).searchParams.get('q');
+
+      // The q parameter is set on page load
+      await expect.poll(getQ).toBeTruthy();
+      const initialQ = getQ();
+
+      await page.locator('button:has-text("chevron_right")').click();
+      await expect.poll(getQ).not.toBe(initialQ);
+      const nextQ = getQ();
+      expect(nextQ).toBeTruthy();
+
+      await page.locator('button:has-text("chevron_left")').click();
+      await expect.poll(getQ).toBe(initialQ);
+    });
+
+    test('moving to the next question adds a browser history entry', async ({ page }) => {
+      if (route === '/') await page.locator('button:has-text("stop_circle")').click();
+
+      const getQ = () => new URL(page.url()).searchParams.get('q');
+
+      await expect.poll(getQ).toBeTruthy();
+      const initialQ = getQ();
+
+      await page.locator('button:has-text("chevron_right")').click();
+      await expect.poll(getQ).not.toBe(initialQ);
+
+      await page.goBack();
+      await expect.poll(getQ).toBe(initialQ);
+    });
+
     test('user can click ? and see pop-up starting on About tab', async ({ page }) => {
       await page.locator('button:has-text("help")').click();
       const popover = page.locator('#whatisthispopover');
