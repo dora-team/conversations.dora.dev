@@ -18,6 +18,15 @@ To develop locally, run:
 - `npm install`
 - `npm run dev`
 
+### Testing
+
+End-to-end tests use [Playwright](https://playwright.dev). To run them:
+
+- `npx playwright install chromium` (once, and again after upgrading Playwright)
+- `npm run test:e2e` (builds the site, then runs the tests)
+
+Netlify runs the tests after every build, so a failing test blocks the deploy. See [test/playwright/README.md](test/playwright/README.md) for more options.
+
 ### Adding a New Question Set
 To add a new set of questions, use the `create-question-set.sh` script.
 
@@ -36,7 +45,7 @@ Run the script with your desired question set name as an argument. The name will
 
 *   Creates a new directory under `src/routes/` (e.g., `src/routes/my-new-question-set/`).
 *   Creates a `+page.svelte` file within the new route directory, pre-configured to use the `Conversation.svelte` component with `showTimer={true}`.
-*   Creates a new text file under `src/assets/` (e.g., `src/assets/continuous-integration-survey.txt`) and pre-populates it with "What questions do you have?".
+*   Creates a new text file under `src/assets/` (e.g., `src/assets/continuous-integration-survey-questions.txt`) and pre-populates it with "What questions do you have?".
 *   Adds the necessary import and export statements to `src/lib/index.js` for your new question set.
 
 **After running the script:**
