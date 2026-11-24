@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      # SvelteKit, its adapters, the Svelte Vite plugin, Svelte, and Vite
+      # depend on each other's versions through peer dependencies, so they
+      # must be upgraded together or `npm install` fails with ERESOLVE.
+      svelte:
+        applies-to: all
+        patterns:
+          - "@sveltejs/*"
+          - "svelte"
+          - "vite"
